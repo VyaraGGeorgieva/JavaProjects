@@ -1,10 +1,9 @@
-package RegEx;
 //input: http://www.devbg.org/forum/index.php
 //output: [protocol] = http
         //[server] = www.devbg.org
         //[resource] = /forum/index.php
 
-
+package RegEx;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,8 +17,7 @@ public class ExtractTheUrl {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String url = scanner.nextLine();
-        //protocol pattern
-        //regex ([a-z]+)(:\/\/+)([a-z.]+)(\/.+)
+        
         Pattern protocolMatcher = Pattern.compile("([a-z]+)(:\\/\\/+)([a-z.]+)(\\/.+)");
         Matcher matcher = protocolMatcher.matcher(url);
 
@@ -32,8 +30,5 @@ public class ExtractTheUrl {
             System.out.println(foundServer);
             System.out.println(foundResource);
         }
-
-
-
     }
 }
