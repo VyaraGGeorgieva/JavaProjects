@@ -32,9 +32,9 @@ public class Tester {
         }
 
         //initialize workers
-        Worker firstWorker = new Worker("Anatoli", "Dimitrov", 200.00, 40);
-        Worker secondWorker = new Worker("Panaiot", "Georgiev", 300.00, 30);
-        Worker thirdWorker = new Worker("Georgi", "Petrov", 400.00, 35);
+        Worker firstWorker = new Worker("Anatoli", "Dimitrov",800, 8);
+        Worker secondWorker = new Worker("Panaiot", "Georgiev", 1000, 8);
+        Worker thirdWorker = new Worker("Georgi", "Petrov", 400, 8);
 
         //add workers to list
         List<Worker> workers = new ArrayList<Worker>();
@@ -42,10 +42,10 @@ public class Tester {
         workers.add(secondWorker);
         workers.add(thirdWorker);
 
-        //sort workers PROBLEM
+        //sort workers
         Comparator<Worker> earnsMoreMoney =
-                (workerOne, workerTwo) -> workerOne.MoneyPerHour()
-                //TODO
+                (workerOne, workerTwo) -> workerOne.GetMoneyPerHour().compareTo(workerTwo.GetMoneyPerHour());
+
         List <Worker> sortedWorkers = workers.stream()
                 .sorted(earnsMoreMoney).collect(Collectors.toList());
 

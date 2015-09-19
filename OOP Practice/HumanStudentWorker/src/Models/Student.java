@@ -22,9 +22,9 @@ public class Student extends Human {
     @Override
     public String toString() {
         return String.format(
-                "My name is : " + this.getFirstName() + " " + this.getLastName() +
-                " I am a " + Student.class.getSimpleName()+
-                        " My faculty number is: " + this.getFacultyNumber()
+                "My name is " + this.getFirstName() + " " + this.getLastName() +
+                ". I am a " + Student.class.getSimpleName()+
+                        ". My faculty number is: " + this.getFacultyNumber()
         );
     }
 }
